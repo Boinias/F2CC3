@@ -16,23 +16,22 @@ const mark = {
     calcBMI: function () {
         return (this.mass/(this.height * this.height));
     },
-    BMI: this.calcBMI
 }
 const john = {
     fullName: "John Smith",
     mass: 92,
     height: 1.95,
     calcBMI: function () {
-        this.BMI = (this.mass/(this.height * this.height));
-        return this.BMI;
+        return (this.mass/(this.height * this.height));
     },
-}
+};
 
-console.log(john.BMI)
+const calcBMIJohn = john.calcBMI();
+const calcBMIMark = mark.calcBMI();
 
-let message = `${john.fullName}'s BMI (${john.calcBMI()}) is ${john.calcBMI() > mark.calcBMI() ? "higher" : "lower"} than Mark's (${mark.calcBMI()})`
+let message = `${john.fullName}'s BMI (${calcBMIJohn}) is ${calcBMIJohn > calcBMIMark ? "higher" : "lower"} than Mark's (${calcBMIMark})`
 
-
+console.log(message)
 
 
 
