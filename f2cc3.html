@@ -8,33 +8,18 @@
 </head>
 <body>
     <script>
+let bills = [125, 555, 44]
 
-const mark = {
-    fullName: "Mark Miller",
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        return (this.mass/(this.height * this.height));
-    },
-}
-const john = {
-    fullName: "John Smith",
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        return (this.mass/(this.height * this.height));
-    },
-};
+        function readOut (bill) {
+let calcTip = bill >= 50 && bill<= 300 ? ((bill*1.15)-bill) : ((bill*1.2)-bill);
+return (calcTip)
+        }
 
-const calcBMIJohn = john.calcBMI();
-const calcBMIMark = mark.calcBMI();
+    tips = [readOut (bills[0]), readOut (bills[1]), readOut (bills[2])];
+        let total = bills[0] + tips[0]
 
-let message = `${john.fullName}'s BMI (${calcBMIJohn}) is ${calcBMIJohn > calcBMIMark ? "higher" : "lower"} than Mark's (${calcBMIMark})`
-
-console.log(message)
-
-
-
+let message = `Your meal was ${bills[0]} meaning your tip came to ${tips[0]} and thus the total came to ${total} `
+        console.log (message)
 
 
     </script>
